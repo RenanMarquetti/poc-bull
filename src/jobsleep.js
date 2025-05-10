@@ -1,4 +1,3 @@
-
 export class JobSleep {
 
 	constructor(timeSleep) {
@@ -9,3 +8,5 @@ export class JobSleep {
   		return new Promise(resolve => setTimeout(resolve, timeSleep))
 	}
 }
+
+export default JobSleep;

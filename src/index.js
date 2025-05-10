@@ -8,7 +8,7 @@ myFirstQueue.add({timeSleep: 1000 * 5});
 
 // consumers
 myFirstQueue.process(async (job) => {
-	return new JobSleep(job.data.timeSleep).getSleepPromisse();
+	return await new JobSleep(job.data.timeSleep).getSleepPromisse();
 });
 
 // listeners
