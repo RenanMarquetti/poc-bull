@@ -4,15 +4,13 @@ import JobSleep from './jobsleep.ts';
 const myFirstQueue = new Bull('my-first-queue');
 
 // producers
-myFirstQueue.add({timeSleep: 1});
+myFirstQueue.add({timeSleep: 1_000 * 5});
 
 // consumers
 myFirstQueue.process(async (job) => {
 	console.log("processing: ", job.data);
-	const j = new JobSleep(job.data.timeSleep);
-	const res = await j.getSleepPromisse();
-	console.log("res: ", res)
-	return res;
+	const obj = new JobSleep(job.data.timeSleep);
+	return await obj.getSleepPromisse().then(_ => "success");
 });
 
 // listeners
