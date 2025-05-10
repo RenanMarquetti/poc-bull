@@ -2,11 +2,11 @@
   "name": "poc-bull",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bull": "node ./src/index.js"
+    "bull": "node ./src/index.ts"
   },
   "keywords": [],
   "author": "",
